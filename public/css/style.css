@@ -1,0 +1,30 @@
+/*Этот css файл будет общим для всего проекта*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    color: white;
+}
+
+.container{
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content-section{
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    margin-top: 5vh;
+}
+
+.content{
+    background-color: #395d94!important;
+    width: 65%;
+    height: auto;
+    padding: 50px;
+}
