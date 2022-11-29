@@ -1,0 +1,40 @@
+.auth{
+    margin: 0 auto;
+    width: 60%;
+    height: auto;
+    background-color: white;
+    color: black;
+}
+
+.auth-title p{
+    color: black;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.auth-title{
+    padding: 10px;
+}
+
+.marker{
+    color: black;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.form-auth{
+    padding: 20px;
+}
+
+.form-auth input{
+    margin-bottom: 25px;
+    color: black;
+    padding: 9px;
+    width: 200px;
+    height: 40px;
+}
+
+.form-auth .submit{
+    background-color: #395d94;
+    color: white;
+}
