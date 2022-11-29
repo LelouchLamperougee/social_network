@@ -4,7 +4,7 @@
         <p>Create account</p>
         <span class="marker">*all fields are required</span>
     </div>
-    <form class="form-auth" action="" method="post">
+    <form class="form-auth" action="../app/models/auth_reg/register.php" method="post">
         <input type="text" name="login" placeholder="Login"><br>
         <input type="text" name="first_name" placeholder="First name"><br>
         <input type="text" name="last_name" placeholder="Last name"><br>

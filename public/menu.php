@@ -9,7 +9,7 @@ var_dump($_GET['file']);
     </div>
     <div class="link-section">
         <ul>
-            <li><a href="../public/profile.php">My profile</a></li>
+            <li><a href="../public/index.php?file=profile">My profile</a></li>
             <li><a href="#">News</a></li>
             <li><a href="#">Popular</a></li>
             <li><a href="#">Top profiles</a></li>
