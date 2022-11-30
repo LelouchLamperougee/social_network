@@ -22,8 +22,8 @@ session_start();
         </div>
         <div class="content">
 
-            <?php
 
+            <?php
 
             $file = "auth";
 
