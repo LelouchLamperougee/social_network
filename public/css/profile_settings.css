@@ -1,0 +1,55 @@
+.profile-settings-container{
+    margin: 0 auto;
+    width: 90%;
+    min-height: 60vh;
+    background-color: white;
+    padding: 25px;
+}
+
+.profile-settings-title span{
+    font-size: 28px;
+    color: black;
+}
+
+.profile-settings-form{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+}
+
+.profile-settings-section-1 input, textarea, select{
+    margin-bottom: 40px;
+}
+
+.profile-settings-section-2 input, textarea, select{
+    margin-bottom: 40px;
+}
+
+.profile-settings-form select{
+    color: black;
+    min-width: 250px;!important;
+}
+
+.profile-settings-form input{
+    color: black;
+    width: 250px;
+}
+
+.profile-settings-form label{
+    color: black;!important;
+    font-size: 20px;!important;
+}
+
+.profile-settings-form textarea{
+    color: black;
+    text-align: center;
+    width: 200px;
+    height: 100px;
+}
+
+.btn-save button{
+    width: 100px;
+    height: 40px;
+    background-color: #395d94;
+    color: white;
+}

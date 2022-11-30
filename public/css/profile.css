@@ -1,0 +1,54 @@
+.profile-container {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90%;
+    min-height: 60vh;
+    padding-bottom: 50px;
+}
+
+.profile-data .login{
+    font-size: 23px;
+}
+
+
+.profile-container span{
+    color: black;
+    font-size: 16px;
+}
+
+.profile-data{
+    margin-left: 40px;
+}
+
+
+.profile-info-section1{
+    display: flex;
+    padding: 20px;
+}
+
+.profile-info {
+    width: 100%;
+    min-height: 30vh;
+    background-color: white;
+    margin-bottom: 10vh;
+}
+
+
+.profile-statistic {
+    width: 100%;
+    min-height: 20vh;
+    background-color: white;
+    color: black;!important;
+}
+
+
+img{
+    width: 240px;
+    height: 240px;
+}
+.profile-description{
+    width: 80%;
+    margin: 20px auto;
+}
