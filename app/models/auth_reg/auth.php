@@ -3,15 +3,18 @@
 session_start();
 require_once '../../database/connect.php';
 
-$login = $_POST['login'];
-$password = $_POST['password'];
+$login = trim($_POST['login']);
+$password = trim($_POST['password']);
 
-/** @var TYPE_NAME $connect */
-$user_search = mysqli_query($connect, "SELECT * FROM `social_network`.`users` WHERE `login` = '$login' AND `password` = '$password'");
+$sql = "SELECT * FROM `users` WHERE `login` = ?";
+/** @var TYPE_NAME $pdo */
+$query = $pdo->prepare($sql);
 
-if (mysqli_num_rows($user_search)){
+$query->execute([$login]);
 
-    $user = mysqli_fetch_assoc($user_search);
+$user = $query->fetch(PDO::FETCH_ASSOC);
+
+if($user && password_verify($password, $user['password'])) {
 
     $_SESSION['user'] = [
         "id" => $user['id'],
@@ -21,4 +24,7 @@ if (mysqli_num_rows($user_search)){
     ];
 
     header('Location: ../../../public/index.php?file=profile');
-}
+
+} else header('Location: ../../../public/index.php?file=auth');
+
+
