@@ -10,6 +10,10 @@
     font-size: 28px;
     color: black;
 }
+.profile-avatar{
+    max-width: 240px;
+    max-height: 240px;
+}
 
 .profile-settings-form{
     display: flex;
@@ -53,3 +57,4 @@
     background-color: #395d94;
     color: white;
 }
+

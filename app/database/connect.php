@@ -14,4 +14,4 @@ try {
     $pdo = new PDO($dsn, $user, $password, $options);
 } catch (PDOException $e){
     die("ERROR DATABASE");
-} echo var_dump('connect');
+}
