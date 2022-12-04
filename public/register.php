@@ -12,7 +12,7 @@
         <input type="password" name="password" placeholder="Enter your password"><br>
         <input type="password" name="repeat_password" placeholder="Repeat your password"><br>
 
-        <input class="submit" type="submit" value="Sign in"><br>
+        <input class="submit" type="submit" value="Sign up"><br>
 
     </form>
 

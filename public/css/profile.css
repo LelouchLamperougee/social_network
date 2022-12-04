@@ -12,27 +12,33 @@
     font-size: 23px;
 }
 
+.text-info{
+    display: inline-block;
+    margin-top: 20px;
+}
 
 .profile-container span{
     color: black;
     font-size: 16px;
+    text-align: center;
 }
 
 .profile-data{
-    margin-left: 40px;
+    text-align: start;
 }
 
 
 .profile-info-section1{
     display: flex;
     padding: 20px;
+    justify-content: space-around;
 }
 
 .profile-info {
     width: 100%;
     min-height: 30vh;
     background-color: white;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 
 
@@ -40,7 +46,6 @@
     width: 100%;
     min-height: 20vh;
     background-color: white;
-    color: black;!important;
 }
 
 

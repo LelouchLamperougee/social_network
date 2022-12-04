@@ -3,6 +3,7 @@ session_start();
 require_once '../../database/connect.php';
 
 $user_id = $_SESSION['user']['id'];
+var_dump('id:'.$user_id);
 $date_of_birth = $_POST['date_of_birth'];
 $description = $_POST['description'];
 $hobby = $_POST['hobby'];
@@ -36,6 +37,7 @@ $params = [
 
 /** @var TYPE_NAME $pdo */
 var_dump('gg');
+
 $query = $pdo->prepare($sql);
 $query->execute($params);
 
