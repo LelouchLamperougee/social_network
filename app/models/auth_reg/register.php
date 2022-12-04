@@ -18,12 +18,16 @@ if (!empty($login) && $password === $repeat_password && !empty($password) && !em
 
     /** @var TYPE_NAME $pdo */
 
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute($params);
+    $query = $pdo->prepare($sql);
+    $query->execute($params);
+
+    header('Location: ../../../public/index.php?file=auth');
 
 } else {
-    echo 'ERROR';
+    header('Location: ../../../public/index.php?file=register');
 }
 
 
-header('Location: ../../../public/index.php?file=auth');
+
+
+
