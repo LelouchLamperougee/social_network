@@ -10,7 +10,7 @@ var_dump($_SESSION['user']['login']);
     <div class="profile-settings-title">
         <span>Profile settings</span>
     </div>
-    <form class="profile-settings-form">
+    <form class="profile-settings-form" action="../app/models/profile/profile_settings.php" method="post" enctype="multipart/form-data">
 
         <div class="profile-settings-section-1">
 
@@ -21,7 +21,7 @@ var_dump($_SESSION['user']['login']);
             <textarea name="description"></textarea><br>
 
             <label for="country">Country:</label><br>
-            <input type="text" name="hometown"><br>
+            <input type="text" name="country"><br>
 
             <label for="hometown">Hometown:</label><br>
             <input type="text" name="hometown"><br>
@@ -37,8 +37,8 @@ var_dump($_SESSION['user']['login']);
             <label for="hobby">Your Hobby:</label><br>
             <textarea name="hobby"></textarea><br>
 
-            <label for="relationship">Relationship:</label><br>
-            <select name="relationship">
+            <label for="relationship_id">Relationship:</label><br>
+            <select name="relationship_id">
                 <option>relationship</option>
             </select><br>
 
@@ -48,10 +48,9 @@ var_dump($_SESSION['user']['login']);
             <div class="btn-save">
                 <button type="submit">Save</button>
             </div>
-
         </div>
-
     </form>
-
-
 </div>
+
+
+

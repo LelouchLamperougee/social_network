@@ -14,7 +14,7 @@ if (!empty($login) && $password === $repeat_password && !empty($password) && !em
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = 'INSERT INTO social_network.users(login, first_name, last_name, password) VALUES(:login, :first_name, :last_name, :password)';
-    $params = ['login' => $login, 'first_name' => $first_name, 'last_name' => $last_name,':password' => $password];
+    $params = ['login' => $login, 'first_name' => $first_name, 'last_name' => $last_name, ':password' => $password];
 
     /** @var TYPE_NAME $pdo */
 
