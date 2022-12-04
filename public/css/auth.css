@@ -1,3 +1,5 @@
+
+
 .auth{
     margin: 0 auto;
     width: 60%;
@@ -19,12 +21,13 @@
 .marker{
     color: black;
     font-size: 12px;
-    opacity: 0.7;
 }
 
 .form-auth{
     padding: 20px;
+    color: black;
 }
+
 
 .form-auth input{
     margin-bottom: 25px;
@@ -37,4 +40,8 @@
 .form-auth .submit{
     background-color: #395d94;
     color: white;
+}
+
+.password_section{
+    display: none;
 }

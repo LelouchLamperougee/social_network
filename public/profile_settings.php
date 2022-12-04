@@ -46,7 +46,7 @@ var_dump($_SESSION['user']['login']);
             <input type="text" name="languages"><br>
 
             <div class="btn-save">
-                <button type="submit">Save</button>
+                <button type="submit">Sign up</button>
             </div>
         </div>
     </form>

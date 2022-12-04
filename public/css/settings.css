@@ -1,0 +1,15 @@
+.settings{
+    margin: 0 auto;
+    width: 90%;
+    min-height: 30vh;
+    background-color: white;
+    padding: 25px;
+}
+
+.settings span{
+    font-size: 24px;
+}
+
+.profile-settings{
+    display: none;
+}
