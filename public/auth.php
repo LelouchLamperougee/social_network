@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="css/auth.css">
 <div class="auth">
     <div class="auth-title">
-        <p>Log In</p>
+        <p>Sign In</p>
         <span class="marker">*all fields are required</span>
     </div>
     <form class="form-auth" action="../app/models/auth_reg/auth.php" method="post">
