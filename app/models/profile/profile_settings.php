@@ -12,36 +12,32 @@ $relationship_id = $_POST['relationship'];
 $hometown = $_POST['hometown'];
 $languages = $_POST['languages'];
 
-var_dump('good');
-
 $path_for_avatar = 'uploads/' . time() . $_FILES['avatar']['name'];
 $move = '../../' . $path_for_avatar;
 move_uploaded_file($_FILES['avatar']['tmp_name'], $move);
 
-var_dump('good');
-$sql = 'INSERT INTO social_network.profiles(user_id, avatar, date_of_birth, description, hobby, country, relationship_id, hometown, languages) VALUES(:user_id, :avatar, :date_of_birth, :description, :hobby, :country, :relationship_id, :hometown, :languages)';
-var_dump('good');
 
-$params = [
-    'user_id' => $user_id,
-    'avatar' => $path_for_avatar,
-    'date_of_birth' => $date_of_birth,
-    'description' => $description,
-    'hobby' => $hobby,
-    'country' => $country,
-    'relationship_id' => $relationship_id,
-    'hometown' => $hometown,
-    'languages' => $languages
-];
-
+$search_profile_data = "SELECT * FROM `profiles` WHERE `user_id` = ?";
 
 /** @var TYPE_NAME $pdo */
-var_dump('gg');
+$query = $pdo->prepare($search_profile_data);
+$query->execute([$user_id]);
 
-$query = $pdo->prepare($sql);
-$query->execute($params);
+$found_profile = $query->fetch(PDO::FETCH_ASSOC);
+//var_dump($found_profile);
 
-var_dump('exit');
+if (!$found_profile){
+    $sql = 'INSERT INTO social_network.profiles(user_id, avatar, date_of_birth, description, hobby, country, relationship_id, hometown, languages) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)';
+
+    $query = $pdo->prepare($sql);
+    $query->execute([$user_id, $path_for_avatar, $date_of_birth, $description, $hobby, $country, $relationship_id, $hometown, $languages]);
+
+} else{
+    $sql = 'UPDATE social_network.profiles SET avatar=?, date_of_birth=?, description=?, hobby=?, country=?, relationship_id=?, hometown=?, languages=? WHERE user_id=?';
+
+    $query = $pdo->prepare($sql);
+    $query->execute([$path_for_avatar, $date_of_birth, $description, $hobby, $country, $relationship_id, $hometown, $languages, $user_id]);
+}
 
 $redirect = 'Location: ../../../public/index.php?file=profile&id='.$user_id;
 header($redirect);
