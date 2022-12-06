@@ -5,22 +5,31 @@ if (!isset($_SESSION['user'])){
     header('Location: ../public/index.php?file=auth');
 }
 
-$login = $_SESSION['user']['login'];
-$first_name = $_SESSION['user']['first_name'];
-$last_name = $_SESSION['user']['last_name'];
+require_once '../app/database/connect.php';
 
-//$today=date("m.d.y");
-//var_dump($today);
-//
+$id = $_GET['id'];
 
-$avatar = $_SESSION['user']['avatar'];
-$description = $_SESSION['user']['description'];
-$date_of_birth = $_SESSION['user']['date_of_birth'];
-$hobby = $_SESSION['user']['hobby'];
-$country = $_SESSION['user']['country'];
-$hometown = $_SESSION['user']['hometown'];
-$relationship = $_SESSION['user']['relationship_id'];
-$languages = $_SESSION['user']['languages'];
+$sql = "SELECT * FROM social_network.users WHERE id=?";
+
+/** @var TYPE_NAME $pdo */
+$query = $pdo->prepare($sql);
+$query->execute([$id]);
+
+$user = $query->fetch(PDO::FETCH_ASSOC);
+
+var_dump($user);
+
+$login = $user['login'];
+$first_name = $user['first_name'];
+$last_name = $user['last_name'];
+$avatar = null;
+$description = null;
+$date_of_birth = null;
+$hobby = null;
+$country = null;
+$hometown = null;
+$relationship = null;
+$languages = null;
 
 if ($avatar === null){
 $avatar = 'uploads/avatar.jpg';

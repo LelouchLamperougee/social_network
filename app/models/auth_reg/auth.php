@@ -42,7 +42,9 @@ if($user && password_verify($password, $user['password'])) {
         'languages' => $profile['languages']
     ];
 
-    header('Location: ../../../public/index.php?file=profile');
+    $id = $_SESSION['user']['id'];
+    $redirect = 'Location: ../../../public/index.php?file=profile&id='.$id;
+    header($redirect);
 
 } else header('Location: ../../../public/index.php?file=auth');
 
