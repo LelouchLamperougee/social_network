@@ -79,10 +79,12 @@ $avatar = 'uploads/avatar.jpg';
                 <span> <?php echo $description;?></span>
             </div>
         </div>
-
     </div>
 
-    <div class="profile-statistic">
-        STATISTIC
-    </div>
+<?php include_once '../public/statistic.php'?>
+
 </div>
+
+<?php
+    include_once '../public/profile_poster.php';
+?>
