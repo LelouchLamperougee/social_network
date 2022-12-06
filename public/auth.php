@@ -1,6 +1,9 @@
 <?php
+session_start();
 if (isset($_SESSION['user'])){
-    header('Location: ../public/index.php?file=profile');
+    $id = $_SESSION['user']['id'];
+    $redirect = 'Location: ../public/index.php?file=profile&id='.$id;
+    header($redirect);
 }
 ?>
 

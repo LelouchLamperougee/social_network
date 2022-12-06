@@ -1,7 +1,8 @@
 <?php
 session_start();
-$file = $_GET['file'];
-var_dump($_GET['file']);
+$id = $_SESSION['user']['id'];
+var_dump($id);
+$file=$_GET['file'];
 ?>
 
 <link rel="stylesheet" href="css/menu.css">
@@ -12,17 +13,10 @@ var_dump($_GET['file']);
     <div class="link-section">
         <ul>
 
-            <?php
-            if ($file === 'profile_settings' || $file === 'auth' || $file === 'register') {
-                echo '';
-            } else echo '
-            <li><a href="../public/index.php?file=profile">My profile</a></li>
-            <li><a href="../public/index.php?file=news">News</a></li>
-            <li><a href="../public/index.php?file=top">Top</a></li>
-            <li><a href="../public/index.php?file=settings">Settings</a></li>
-                ';
-            ?>
-
+            <li><a href="../public/index.php?file=profile&id=<?= $id ?>">My profile</a></li>
+            <li><a href="../public/index.php?file=news&id=<?= $id ?>">News</a></li>
+            <li><a href="../public/index.php?file=top&id=<?= $id ?>">Top</a></li>
+            <li><a href="../public/index.php?file=settings&id=<?= $id ?>">Settings</a></li>
 
             <?php
             if (isset($_SESSION['user'])) {
