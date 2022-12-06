@@ -43,7 +43,8 @@ $query->execute($params);
 
 var_dump('exit');
 
-header('Location: ../../../public/index.php?file=profile');
+$redirect = 'Location: ../../../public/index.php?file=profile&id='.$user_id;
+header($redirect);
 
 
 

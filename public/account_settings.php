@@ -11,7 +11,7 @@ $last_name = $_SESSION['user']['last_name'];
         <p>Account settings</p>
         <span class="marker">*all fields are required</span>
     </div>
-    <form class="form-auth" action="" method="post">
+    <form class="form-auth" action="../app/models/account/account_settings.php" method="post">
 
         <input type="text" value="<?= $login;?>" name="login" placeholder="Login"><br>
         <input type="text" value="<?= $first_name ?>" name="first_name" placeholder="First name"><br>
@@ -20,7 +20,7 @@ $last_name = $_SESSION['user']['last_name'];
         <input id="btn-change-password" class="submit" type="button" value="change password">
 
         <div class="password_section">
-            <input type="password" name="password" placeholder="Enter your password"><br>
+            <input type="password" name="password" placeholder="Enter new password"><br>
             <input type="password" name="repeat_password" placeholder="Repeat your password"><br>
         </div>
 
