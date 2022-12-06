@@ -52,7 +52,10 @@
 img{
     width: 240px;
     height: 240px;
+    border: 3px solid black;
 }
+
+
 .profile-description{
     width: 80%;
     margin: 20px auto;

@@ -17,19 +17,27 @@ $query->execute([$id]);
 
 $user = $query->fetch(PDO::FETCH_ASSOC);
 
-var_dump($user);
-
 $login = $user['login'];
 $first_name = $user['first_name'];
 $last_name = $user['last_name'];
-$avatar = null;
-$description = null;
-$date_of_birth = null;
-$hobby = null;
-$country = null;
-$hometown = null;
-$relationship = null;
-$languages = null;
+
+if ($user){
+    $sql = "SELECT * FROM social_network.profiles WHERE user_id=?";
+
+    $query=$pdo->prepare($sql);
+    $query->execute([$id]);
+
+    $profiles = $query->fetch(PDO::FETCH_ASSOC);
+}
+
+$avatar = $profiles['avatar'];
+$description = $profiles['description'];
+$date_of_birth = $profiles['date_of_birth'];
+$hobby = $profiles['hobby'];
+$country = $profiles['country'];
+$hometown = $profiles['hometown'];
+$relationship = $profiles['relationship_id'];
+$languages = $profiles['languages'];
 
 if ($avatar === null){
 $avatar = 'uploads/avatar.jpg';
@@ -49,16 +57,16 @@ $avatar = 'uploads/avatar.jpg';
             </div>
             <div class="profile-data">
 
-                <span class="login">login: <?= $login;?></span><br>
-                <span class="text-info">name: <?= $first_name;?></span><br>
-                <span class="text-info">surname: <?= $last_name;?></span><br>
+                <span class="login">Login: <?= $login;?></span><br>
+                <span class="text-info">Name: <?= $first_name;?></span><br>
+                <span class="text-info">Surname: <?= $last_name;?></span><br>
 
-                <span class="text-info">date of birth: <?= $date_of_birth;?></span><br>
-                <span class="text-info">hobby/hobbies: <?= $hobby;?></span><br>
-                <span class="text-info">country: <?= $country;?></span><br>
-                <span class="text-info">hometown: <?= $hometown;?></span><br>
-                <span class="text-info">relationship: <?= $relationship;?></span><br>
-                <span class="text-info">languages: <?= $languages;?></span><br>
+                <span class="text-info">Date of birth: <?= $date_of_birth;?></span><br>
+                <span class="text-info">Hobby: <?= $hobby;?></span><br>
+                <span class="text-info">Country: <?= $country;?></span><br>
+                <span class="text-info">Hometown: <?= $hometown;?></span><br>
+                <span class="text-info">Relationship: <?= $relationship;?></span><br>
+                <span class="text-info">Languages: <?= $languages;?></span><br>
 
             </div>
         </div>
