@@ -15,13 +15,13 @@ $file=$_GET['file'];
 
             <li><a href="../public/index.php?file=profile&id=<?= $id ?>">My profile</a></li>
             <li><a href="../public/index.php?file=news&id=<?= $id ?>">News</a></li>
-            <li><a href="../public/index.php?file=top&id=<?= $id ?>">Top</a></li>
             <li><a href="../public/index.php?file=settings&id=<?= $id ?>">Settings</a></li>
 
             <?php
             if (isset($_SESSION['user'])) {
                 echo '<li><a href="../app/models/auth_reg/sign_out.php">Sign Out</a></li>';
             } else echo '<li><a href="../public/index.php?file=auth">Sign In</a></li>';
+
             ?>
         </ul>
     </div>
