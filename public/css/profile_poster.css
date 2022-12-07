@@ -9,6 +9,28 @@
     min-height: 300px;
 }
 
+.new-poster{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.new-poster p{
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.rules{
+    color: white;
+    background-color: #395d94;
+    height: 94%;
+    padding: 30px;
+}
+
+.new-poster form{
+    margin-right: 30px;
+}
+
 .new-poster label{
     font-size: 23px;
 }
@@ -53,6 +75,5 @@
 
 .post .post-title{
     font-size: 22px;
-
 }
 
